@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Including JS File Here -->
+    <script src="~/Scripts/test_multi_step.js"></script>
+
+    <script src="~/Scripts/report.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    
+    
+
+
+    <link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+    
+
+    
+    <link href="~/Content/style.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fall<span>Relief</span></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav m-auto">
+
+                    <li class="nav-item"><a href="/Home/Index" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="/Home/FallAssessment" class="nav-link">Fall Assessment</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section id="block" class="ftco-section bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="wrapper">
+                        <div class="row no-gutters">
+                            <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                                <div class="contact-wrap w-100 p-md-5 p-4">
+                                    <h2>Did you know ?</h2>
+                                    <h3 class="mb-4">By setting your home environment and checking your medical condition</h3>
+                                    <h3 class="mb-4">You can reduce fatal falls and save lives </h3>
+                                    <h3 class="mb-4">Lets get started by finding your score</h3>
+                                    <div id="form-message-warning" class="mb-4"></div>
+                                    <div id="form-message-success" class="mb-4">
+
+                                    </div>
+                                    <form method="POST" id="contactForm" class="contactForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+
+                                            </div>
+
+                                            <div class="col-md-12">
+
+                                            </div>
+                                            <div class="col-md-12">
+
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input id="butn" onclick="get_report()" value="Get Results" class="btn btn-primary">
+                                                    <div class="submitting"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Report-->
+    <div id="hide" style="display:none">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-4 col-md-5 d-flex align-items-stretch">
+                <div class="info-wrap bg-primary w-100 p-md-5 p-4">
+                    <h2>Report</h2>
+                    <br />
+
+                    <div class="dbox w-100 d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-phone"></span>
+                        </div>
+                        <div class="text pl-3">
+                            <h3><span>Overall Score:</span> </h3>
+                            <p id="overall"> </p>
+
+                        </div>
+                    </div>
+                    <div class="dbox w-100 d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-paper-plane"></span>
+                        </div>
+                        <div class="text pl-3">
+                            <h3><span>Home assessment risk level:</span></h3>
+                            <p id="risk_home">  </p>
+                        </div>
+                    </div>
+                    <div class="dbox w-100 d-flex align-items-center">
+                        <div class="icon d-flex align-items-center justify-content-center">
+                            <span class="fa fa-globe"></span>
+                        </div>
+                        <div class="text pl-3">
+                            <h3><span>Health assessment risk level:</span> </h3>
+                            <p id="risk_health">  </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <div class="col-md-12">
+                <div class="text-center" style="margin:10px">
+
+                    <input id="btn" onclick="preview()" value="Preview" class="btn btn-primary">
+                </div>
+            </div>
+            </div>
+
+        </div>
+       
+
+
+        
+        
+            
+
+        
+        
+
+
+
+
+
+        <div id="hiden" style="display:none">
+            <section class="ftco-section bg-light">
+                <div class="row justify-content-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <div class="wrapper">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                                            <div class="contact-wrap w-100 p-md-5 p-4">
+
+
+
+
+
+
+                                                <h1 class="mb-0 bread">Your Results</h1>
+                                                <label id="one"></label>
+                                                <p id="ans1"></p>
+                                                <br />
+
+
+                                                <label id="two"></label><br />
+                                                <p id="ans2"></p>
+
+                                                <label id="three"></label><br />
+                                                <p id="ans3"></p>
+
+                                                <label id="four"></label>
+                                                <p id="ans4"></p>
+
+                                                <label id="five"></label>
+                                                <p id="ans5"></p>
+
+                                                <label id="six"></label>
+                                                <p id="ans6"></p>
+
+                                                <label id="seven"></label>
+                                                <p id="ans7"></p>
+
+                                                <label id="eigth"></label>
+                                                <p id="ans8"></p>
+
+
+                                                <label id="nine"></label>
+                                                <p id="ans9"></p>
+
+                                                <label id="ten"> </label>
+                                                <p id="ans10"></p>
+
+                                                <label id="eleven"></label>
+                                                <p id="ans11"></p>
+
+                                                <label id="twelve"></label>
+                                                <p id="ans12"></p>
+
+                                                <label id="thirt"></label>
+                                                <p id="ans13"></p>
+
+                                                <label id="fourt"></label>
+                                                <p id="ans14"></p>
+
+                                                <label id="fifteen"></label>
+                                                <p id="ans15"></p>
+
+                                               
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+</body>
+</html>

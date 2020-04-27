@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fall_reliefModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_actionplan_homesafety">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Action" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="Risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Action" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location_Room" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Who" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_actionplan_nutrition">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Nutrient" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="Risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nutrient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_AssessResp">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="ResponseID" />
+    </Key>
+    <Property Name="AssessmentID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="ResponseID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_AssessRisk">
+    <Key>
+      <PropertyRef Name="QuestionNo" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Risk_Statement" />
+    </Key>
+    <Property Name="QuestionNo" Type="Int32" Nullable="false" />
+    <Property Name="Risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Risk_Statement" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Food">
+    <Key>
+      <PropertyRef Name="FoodKey" />
+      <PropertyRef Name="Food_Profile_ID" />
+      <PropertyRef Name="Derivation" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="DefinedName" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Sampling_details" />
+      <PropertyRef Name="Nitrogen_Factor" />
+      <PropertyRef Name="Fat_Factor" />
+      <PropertyRef Name="Specific_Gravity" />
+      <PropertyRef Name="Analysed_portion" />
+      <PropertyRef Name="Unanalysed_portion" />
+      <PropertyRef Name="Classification_ID" />
+      <PropertyRef Name="Classification_Name" />
+    </Key>
+    <Property Name="FoodKey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Food_Profile_ID" Type="Int32" Nullable="false" />
+    <Property Name="Derivation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DefinedName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Scientific_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Sampling_details" Type="String" MaxLength="2150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nitrogen_Factor" Type="Double" Nullable="false" />
+    <Property Name="Fat_Factor" Type="Double" Nullable="false" />
+    <Property Name="Specific_Gravity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Analysed_portion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unanalysed_portion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Classification_ID" Type="Int32" Nullable="false" />
+    <Property Name="Classification_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_FoodNutrient">
+    <Key>
+      <PropertyRef Name="FoodName" />
+      <PropertyRef Name="NutrientID" />
+      <PropertyRef Name="NutrientName" />
+      <PropertyRef Name="Value" />
+      <PropertyRef Name="Unit" />
+      <PropertyRef Name="Rank" />
+    </Key>
+    <Property Name="FoodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NutrientID" Type="Int32" Nullable="false" />
+    <Property Name="NutrientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Value" Type="Double" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Nutrient">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Nutrient_RawName" />
+      <PropertyRef Name="NutrientName" />
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Nutrient_RawName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NutrientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Questions">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="AssessmentType" />
+      <PropertyRef Name="Section" />
+      <PropertyRef Name="Question" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="AssessmentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Section" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Question" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Responses">
+    <Key>
+      <PropertyRef Name="ResponseID" />
+      <PropertyRef Name="Response" />
+    </Key>
+    <Property Name="ResponseID" Type="Int32" Nullable="false" />
+    <Property Name="Response" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_risklevel">
+    <Key>
+      <PropertyRef Name="AssessmentType" />
+      <PropertyRef Name="RiskLevel" />
+      <PropertyRef Name="LowerLimit" />
+      <PropertyRef Name="UpperLimit" />
+    </Key>
+    <Property Name="AssessmentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RiskLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LowerLimit" Type="Int32" Nullable="false" />
+    <Property Name="UpperLimit" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_riskscore">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="ResponseID" />
+      <PropertyRef Name="RiskScore" />
+      <PropertyRef Name="ActionRequired" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="ResponseID" Type="Int32" Nullable="false" />
+    <Property Name="RiskScore" Type="Double" Nullable="false" />
+    <Property Name="ActionRequired" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_actionplan_homesafety">
+    <Key>
+      <PropertyRef Name="assessmentid" />
+      <PropertyRef Name="risk" />
+      <PropertyRef Name="action" />
+    </Key>
+    <Property Name="assessmentid" Type="Int32" Nullable="false" />
+    <Property Name="risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="action" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Location" Type="Int32" />
+    <Property Name="Who" Type="Int32" />
+    <Property Name="Done" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vw_actionplan_nutrition">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="risk" />
+      <PropertyRef Name="Nutrient" />
+      <PropertyRef Name="FoodName" />
+    </Key>
+    <Property Name="AssessmentID" Type="Int32" Nullable="false" />
+    <Property Name="risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nutrient" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FoodName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Food_Rank" Type="Int64" />
+  </EntityType>
+  <EntityType Name="vw_risklevel">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="Assessment_Type" />
+      <PropertyRef Name="Assessment_Section" />
+      <PropertyRef Name="RiskLevel" />
+    </Key>
+    <Property Name="AssessmentID" Type="Int32" Nullable="false" />
+    <Property Name="Assessment_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Assessment_Section" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Risk_Score" Type="Double" />
+    <Property Name="RiskLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_riskstatement">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="Assessment_Type" />
+      <PropertyRef Name="Assessment_Section" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Risk_Statement" />
+    </Key>
+    <Property Name="AssessmentID" Type="Int32" Nullable="false" />
+    <Property Name="Assessment_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Assessment_Section" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Risk" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Risk_Statement" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="fall_reliefEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_actionplan_homesafety" EntityType="Self.tbl_actionplan_homesafety" />
+    <EntitySet Name="tbl_actionplan_nutrition" EntityType="Self.tbl_actionplan_nutrition" />
+    <EntitySet Name="tbl_AssessResp" EntityType="Self.tbl_AssessResp" />
+    <EntitySet Name="tbl_AssessRisk" EntityType="Self.tbl_AssessRisk" />
+    <EntitySet Name="tbl_Food" EntityType="Self.tbl_Food" />
+    <EntitySet Name="tbl_FoodNutrient" EntityType="Self.tbl_FoodNutrient" />
+    <EntitySet Name="tbl_Nutrient" EntityType="Self.tbl_Nutrient" />
+    <EntitySet Name="tbl_Questions" EntityType="Self.tbl_Questions" />
+    <EntitySet Name="tbl_Responses" EntityType="Self.tbl_Responses" />
+    <EntitySet Name="tbl_risklevel" EntityType="Self.tbl_risklevel" />
+    <EntitySet Name="tbl_riskscore" EntityType="Self.tbl_riskscore" />
+    <EntitySet Name="vw_actionplan_homesafety" EntityType="Self.vw_actionplan_homesafety" />
+    <EntitySet Name="vw_actionplan_nutrition" EntityType="Self.vw_actionplan_nutrition" />
+    <EntitySet Name="vw_risklevel" EntityType="Self.vw_risklevel" />
+    <EntitySet Name="vw_riskstatement" EntityType="Self.vw_riskstatement" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <FunctionImport Name="Get_ActionPlan_HomeSafety" ReturnType="Collection(fall_reliefModel.Get_ActionPlan_HomeSafety_Result)">
+      <Parameter Name="UAssessmentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_ActionPlan_Nutrition" ReturnType="Collection(fall_reliefModel.Get_ActionPlan_Nutrition_Result)">
+      <Parameter Name="UAssessmentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_AssessmentID" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="Get_RiskLevel" ReturnType="Collection(fall_reliefModel.Get_RiskLevel_Result)">
+      <Parameter Name="UAssessmentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_RiskStatement" ReturnType="Collection(fall_reliefModel.Get_RiskStatement_Result)">
+      <Parameter Name="UAssessmentID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="insertAssessResp">
+      <Parameter Name="AssessmentID" Mode="In" Type="Int32" />
+      <Parameter Name="QuestionID" Mode="In" Type="Int32" />
+      <Parameter Name="ResponseID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="New_Assessment" />
+  </EntityContainer>
+  <ComplexType Name="Get_ActionPlan_HomeSafety_Result">
+    <Property Type="Int32" Name="assessmentid" Nullable="false" />
+    <Property Type="String" Name="risk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="action" Nullable="false" MaxLength="200" />
+    <Property Type="Int32" Name="Location" Nullable="true" />
+    <Property Type="Int32" Name="Who" Nullable="true" />
+    <Property Type="Int32" Name="Done" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Get_ActionPlan_Nutrition_Result">
+    <Property Type="Int32" Name="AssessmentID" Nullable="false" />
+    <Property Type="String" Name="risk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Nutrient" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="FoodName" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="Food_Rank" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="Get_RiskLevel_Result">
+    <Property Type="Int32" Name="AssessmentID" Nullable="false" />
+    <Property Type="String" Name="Assessment_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Assessment_Section" Nullable="false" MaxLength="50" />
+    <Property Type="Double" Name="Risk_Score" Nullable="true" />
+    <Property Type="String" Name="RiskLevel" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="Get_RiskStatement_Result">
+    <Property Type="Int32" Name="AssessmentID" Nullable="false" />
+    <Property Type="String" Name="Assessment_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Assessment_Section" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Risk" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Risk_Statement" Nullable="false" MaxLength="800" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fall_reliefModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_actionplan_homesafety' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_actionplan_homesafety">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Action" />
+    </Key>
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="Risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Action" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Location_Room" Type="nvarchar" MaxLength="200" />
+    <Property Name="Who" Type="nvarchar" MaxLength="200" />
+    <Property Name="Status" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_actionplan_nutrition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_actionplan_nutrition">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Nutrient" />
+    </Key>
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="Risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nutrient" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'fall_relief.dbo.tbl_assessment' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="tbl_assessment">
+          <Property Name="assessmentId" Type="int" />
+          <Property Name="timeCreated" Type="datetime" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_AssessResp' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_AssessResp">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="ResponseID" />
+    </Key>
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="ResponseID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_AssessRisk' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_AssessRisk">
+    <Key>
+      <PropertyRef Name="QuestionNo" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Risk_Statement" />
+    </Key>
+    <Property Name="QuestionNo" Type="int" Nullable="false" />
+    <Property Name="Risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Risk_Statement" Type="nvarchar" MaxLength="800" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_Food' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Food">
+    <Key>
+      <PropertyRef Name="FoodKey" />
+      <PropertyRef Name="Food_Profile_ID" />
+      <PropertyRef Name="Derivation" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="DefinedName" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Sampling_details" />
+      <PropertyRef Name="Nitrogen_Factor" />
+      <PropertyRef Name="Fat_Factor" />
+      <PropertyRef Name="Specific_Gravity" />
+      <PropertyRef Name="Analysed_portion" />
+      <PropertyRef Name="Unanalysed_portion" />
+      <PropertyRef Name="Classification_ID" />
+      <PropertyRef Name="Classification_Name" />
+    </Key>
+    <Property Name="FoodKey" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Food_Profile_ID" Type="int" Nullable="false" />
+    <Property Name="Derivation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DefinedName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="400" Nullable="false" />
+    <Property Name="Scientific_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sampling_details" Type="nvarchar" MaxLength="2150" Nullable="false" />
+    <Property Name="Nitrogen_Factor" Type="float" Nullable="false" />
+    <Property Name="Fat_Factor" Type="float" Nullable="false" />
+    <Property Name="Specific_Gravity" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Analysed_portion" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unanalysed_portion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Classification_ID" Type="int" Nullable="false" />
+    <Property Name="Classification_Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_FoodNutrient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_FoodNutrient">
+    <Key>
+      <PropertyRef Name="FoodName" />
+      <PropertyRef Name="NutrientID" />
+      <PropertyRef Name="NutrientName" />
+      <PropertyRef Name="Value" />
+      <PropertyRef Name="Unit" />
+      <PropertyRef Name="Rank" />
+    </Key>
+    <Property Name="FoodName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NutrientID" Type="int" Nullable="false" />
+    <Property Name="NutrientName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="float" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Rank" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_Nutrient' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Nutrient">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Nutrient_RawName" />
+      <PropertyRef Name="NutrientName" />
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Nutrient_RawName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NutrientName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_Questions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Questions">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="AssessmentType" />
+      <PropertyRef Name="Section" />
+      <PropertyRef Name="Question" />
+    </Key>
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="AssessmentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Section" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Question" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_Responses' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_Responses">
+    <Key>
+      <PropertyRef Name="ResponseID" />
+      <PropertyRef Name="Response" />
+    </Key>
+    <Property Name="ResponseID" Type="int" Nullable="false" />
+    <Property Name="Response" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_risklevel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_risklevel">
+    <Key>
+      <PropertyRef Name="AssessmentType" />
+      <PropertyRef Name="RiskLevel" />
+      <PropertyRef Name="LowerLimit" />
+      <PropertyRef Name="UpperLimit" />
+    </Key>
+    <Property Name="AssessmentType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RiskLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LowerLimit" Type="int" Nullable="false" />
+    <Property Name="UpperLimit" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.tbl_riskscore' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_riskscore">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="QuestionID" />
+      <PropertyRef Name="ResponseID" />
+      <PropertyRef Name="RiskScore" />
+      <PropertyRef Name="ActionRequired" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="QuestionID" Type="int" Nullable="false" />
+    <Property Name="ResponseID" Type="int" Nullable="false" />
+    <Property Name="RiskScore" Type="float" Nullable="false" />
+    <Property Name="ActionRequired" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.vw_actionplan_homesafety' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_actionplan_homesafety">
+    <Key>
+      <PropertyRef Name="assessmentid" />
+      <PropertyRef Name="risk" />
+      <PropertyRef Name="action" />
+    </Key>
+    <Property Name="assessmentid" Type="int" Nullable="false" />
+    <Property Name="risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="action" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Location" Type="int" />
+    <Property Name="Who" Type="int" />
+    <Property Name="Done" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.vw_actionplan_nutrition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_actionplan_nutrition">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="risk" />
+      <PropertyRef Name="Nutrient" />
+      <PropertyRef Name="FoodName" />
+    </Key>
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nutrient" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FoodName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Food Rank" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.vw_risklevel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_risklevel">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="Assessment Type" />
+      <PropertyRef Name="Assessment Section" />
+      <PropertyRef Name="RiskLevel" />
+    </Key>
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="Assessment Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Assessment Section" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Risk Score" Type="float" />
+    <Property Name="RiskLevel" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.dbo.vw_riskstatement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_riskstatement">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+      <PropertyRef Name="Assessment Type" />
+      <PropertyRef Name="Assessment Section" />
+      <PropertyRef Name="Risk" />
+      <PropertyRef Name="Risk Statement" />
+    </Key>
+    <Property Name="AssessmentID" Type="int" Nullable="false" />
+    <Property Name="Assessment Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Assessment Section" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Risk" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Risk Statement" Type="nvarchar" MaxLength="800" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fall_relief.sys.database_firewall_rules' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="create_date" Type="datetime" Nullable="false" />
+    <Property Name="modify_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="Get_ActionPlan_HomeSafety" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UAssessmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_ActionPlan_Nutrition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UAssessmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_AssessmentID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Get_RiskLevel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UAssessmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_RiskStatement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UAssessmentID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="insertAssessResp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AssessmentID" Type="int" Mode="In" />
+    <Parameter Name="QuestionID" Type="int" Mode="In" />
+    <Parameter Name="ResponseID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="New_Assessment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="fall_reliefModelStoreContainer">
+    <EntitySet Name="tbl_actionplan_homesafety" EntityType="Self.tbl_actionplan_homesafety" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_actionplan_homesafety].[QuestionID] AS [QuestionID], 
+    [tbl_actionplan_homesafety].[Risk] AS [Risk], 
+    [tbl_actionplan_homesafety].[Action] AS [Action], 
+    [tbl_actionplan_homesafety].[Location_Room] AS [Location_Room], 
+    [tbl_actionplan_homesafety].[Who] AS [Who], 
+    [tbl_actionplan_homesafety].[Status] AS [Status]
+    FROM [dbo].[tbl_actionplan_homesafety] AS [tbl_actionplan_homesafety]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_actionplan_nutrition" EntityType="Self.tbl_actionplan_nutrition" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_actionplan_nutrition].[QuestionID] AS [QuestionID], 
+    [tbl_actionplan_nutrition].[Risk] AS [Risk], 
+    [tbl_actionplan_nutrition].[Nutrient] AS [Nutrient]
+    FROM [dbo].[tbl_actionplan_nutrition] AS [tbl_actionplan_nutrition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_AssessResp" EntityType="Self.tbl_AssessResp" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_AssessResp].[AssessmentID] AS [AssessmentID], 
+    [tbl_AssessResp].[QuestionID] AS [QuestionID], 
+    [tbl_AssessResp].[ResponseID] AS [ResponseID]
+    FROM [dbo].[tbl_AssessResp] AS [tbl_AssessResp]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_AssessRisk" EntityType="Self.tbl_AssessRisk" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_AssessRisk].[QuestionNo] AS [QuestionNo], 
+    [tbl_AssessRisk].[Risk] AS [Risk], 
+    [tbl_AssessRisk].[Risk_Statement] AS [Risk_Statement]
+    FROM [dbo].[tbl_AssessRisk] AS [tbl_AssessRisk]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Food" EntityType="Self.tbl_Food" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Food].[FoodKey] AS [FoodKey], 
+    [tbl_Food].[Food_Profile_ID] AS [Food_Profile_ID], 
+    [tbl_Food].[Derivation] AS [Derivation], 
+    [tbl_Food].[Name] AS [Name], 
+    [tbl_Food].[DefinedName] AS [DefinedName], 
+    [tbl_Food].[Description] AS [Description], 
+    [tbl_Food].[Scientific_Name] AS [Scientific_Name], 
+    [tbl_Food].[Sampling_details] AS [Sampling_details], 
+    [tbl_Food].[Nitrogen_Factor] AS [Nitrogen_Factor], 
+    [tbl_Food].[Fat_Factor] AS [Fat_Factor], 
+    [tbl_Food].[Specific_Gravity] AS [Specific_Gravity], 
+    [tbl_Food].[Analysed_portion] AS [Analysed_portion], 
+    [tbl_Food].[Unanalysed_portion] AS [Unanalysed_portion], 
+    [tbl_Food].[Classification_ID] AS [Classification_ID], 
+    [tbl_Food].[Classification_Name] AS [Classification_Name]
+    FROM [dbo].[tbl_Food] AS [tbl_Food]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_FoodNutrient" EntityType="Self.tbl_FoodNutrient" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_FoodNutrient].[FoodName] AS [FoodName], 
+    [tbl_FoodNutrient].[NutrientID] AS [NutrientID], 
+    [tbl_FoodNutrient].[NutrientName] AS [NutrientName], 
+    [tbl_FoodNutrient].[Value] AS [Value], 
+    [tbl_FoodNutrient].[Unit] AS [Unit], 
+    [tbl_FoodNutrient].[Rank] AS [Rank]
+    FROM [dbo].[tbl_FoodNutrient] AS [tbl_FoodNutrient]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Nutrient" EntityType="Self.tbl_Nutrient" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Nutrient].[ID] AS [ID], 
+    [tbl_Nutrient].[Nutrient_RawName] AS [Nutrient_RawName], 
+    [tbl_Nutrient].[NutrientName] AS [NutrientName], 
+    [tbl_Nutrient].[Unit] AS [Unit]
+    FROM [dbo].[tbl_Nutrient] AS [tbl_Nutrient]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Questions" EntityType="Self.tbl_Questions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Questions].[QuestionID] AS [QuestionID], 
+    [tbl_Questions].[AssessmentType] AS [AssessmentType], 
+    [tbl_Questions].[Section] AS [Section], 
+    [tbl_Questions].[Question] AS [Question]
+    FROM [dbo].[tbl_Questions] AS [tbl_Questions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_Responses" EntityType="Self.tbl_Responses" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_Responses].[ResponseID] AS [ResponseID], 
+    [tbl_Responses].[Response] AS [Response]
+    FROM [dbo].[tbl_Responses] AS [tbl_Responses]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_risklevel" EntityType="Self.tbl_risklevel" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_risklevel].[AssessmentType] AS [AssessmentType], 
+    [tbl_risklevel].[RiskLevel] AS [RiskLevel], 
+    [tbl_risklevel].[LowerLimit] AS [LowerLimit], 
+    [tbl_risklevel].[UpperLimit] AS [UpperLimit]
+    FROM [dbo].[tbl_risklevel] AS [tbl_risklevel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tbl_riskscore" EntityType="Self.tbl_riskscore" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_riskscore].[ID] AS [ID], 
+    [tbl_riskscore].[QuestionID] AS [QuestionID], 
+    [tbl_riskscore].[ResponseID] AS [ResponseID], 
+    [tbl_riskscore].[RiskScore] AS [RiskScore], 
+    [tbl_riskscore].[ActionRequired] AS [ActionRequired]
+    FROM [dbo].[tbl_riskscore] AS [tbl_riskscore]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_actionplan_homesafety" EntityType="Self.vw_actionplan_homesafety" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_actionplan_homesafety].[assessmentid] AS [assessmentid], 
+    [vw_actionplan_homesafety].[risk] AS [risk], 
+    [vw_actionplan_homesafety].[action] AS [action], 
+    [vw_actionplan_homesafety].[Location] AS [Location], 
+    [vw_actionplan_homesafety].[Who] AS [Who], 
+    [vw_actionplan_homesafety].[Done] AS [Done]
+    FROM [dbo].[vw_actionplan_homesafety] AS [vw_actionplan_homesafety]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_actionplan_nutrition" EntityType="Self.vw_actionplan_nutrition" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_actionplan_nutrition].[AssessmentID] AS [AssessmentID], 
+    [vw_actionplan_nutrition].[risk] AS [risk], 
+    [vw_actionplan_nutrition].[Nutrient] AS [Nutrient], 
+    [vw_actionplan_nutrition].[FoodName] AS [FoodName], 
+    [vw_actionplan_nutrition].[Food Rank] AS [Food Rank]
+    FROM [dbo].[vw_actionplan_nutrition] AS [vw_actionplan_nutrition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_risklevel" EntityType="Self.vw_risklevel" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_risklevel].[AssessmentID] AS [AssessmentID], 
+    [vw_risklevel].[Assessment Type] AS [Assessment Type], 
+    [vw_risklevel].[Assessment Section] AS [Assessment Section], 
+    [vw_risklevel].[Risk Score] AS [Risk Score], 
+    [vw_risklevel].[RiskLevel] AS [RiskLevel]
+    FROM [dbo].[vw_risklevel] AS [vw_risklevel]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_riskstatement" EntityType="Self.vw_riskstatement" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_riskstatement].[AssessmentID] AS [AssessmentID], 
+    [vw_riskstatement].[Assessment Type] AS [Assessment Type], 
+    [vw_riskstatement].[Assessment Section] AS [Assessment Section], 
+    [vw_riskstatement].[Risk] AS [Risk], 
+    [vw_riskstatement].[Risk Statement] AS [Risk Statement]
+    FROM [dbo].[vw_riskstatement] AS [vw_riskstatement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+      <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

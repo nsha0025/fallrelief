@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Life Coach - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <!-- Including JS File Here -->
+    <script src="~/Scripts/test_multi_step.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="~/Content/animate.css" rel="stylesheet" />
+
+
+    <link href="~/Content/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/magnific-popup.css" rel="stylesheet" />
+
+    <link href="~/Content/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">Fall<span>Relief</span></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span> Menu
+            </button>
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav m-auto">
+
+                    <li class="nav-item"><a href="/Home/Index" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="/Home/FallAssessment" class="nav-link">Fall Assessment</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END nav -->
+    <section id="img" class="hero-wrap hero-wrap-2" style=" background-image: url('../../Content/How_does_24-Hour_Care_Work_Live-in_Care___Elder.jpg');" data-stellar-background-ratio="0.5">
+
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end">
+                <div class="col-md-9 ftco-animate pb-5">
+
+                    <h1 class="mb-0 bread">Welcome to Fall Assessment</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <p style="font-size:18px; text-align:left" id="description">
+            Most of us will have experienced a fall at some point
+            <br />
+            Indeed, there is no denying that the chance of falling does increase as we age. However, we should not take falls as a normal part of getting older into granted.
+            In fact, we can mitigate it. <br />Falls are caused by a series of risk factors that can affect a person of any age.
+            <br />The causes are summarized as being personal risk factors or environmental risk factors. Personal risk factors are factors that affect you and your body while environmental risk factors relate to the world around you.
+            Here is the point. <br />By conducting a multi-faceted assessment, the fall rate can be reduced by 30-40%, followed by multi-factorial interventions.
+            <br />Therefore, our “Fall Relief” assessment can help you obtain a more detailed analysis of the falling for the people you care about so much.<br />
+            <strong>We are here for:</strong>
+            </br>
+            -	Identify if the people you love is at risk of falling<br />
+            -	Specify the causes of falls in an individual<br />
+            -	Provide baseline insights of carer-specific areas of risk<br />
+            -	Inform personalize preventive measures and care plans.<br />
+            As a person's health and circumstances change, reassessment is necessary.<br />
+            <br />
+            Click below to begin the assessment<br />
+        </p>
+
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <input id="btn" onclick="start_assessment()" value="Start" class="btn btn-primary">
+                <div class="submitting"></div>
+            </div>
+            <br />
+
+        </div>
+    </div>
+   
+
+        <div id="hidden" style="display:none">
+            <section class="ftco-section bg-light">
+                <div class="row justify-content-center">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-md-12">
+                                <div class="wrapper">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-8 col-md-7 order-md-last d-flex align-items-stretch">
+                                            <div class="contact-wrap w-100 p-md-5 p-4">
+
+
+                                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <!--Step1-->
+                                                                <fieldset id="first">
+                                                                    <h1 class="mb-0 bread">Basic Information</h1>
+                                                                    <label>Gender:</label><br />
+                                                                    <input type="radio" name="gender" id="name"><span style="margin-left:3px">Male</span>
+                                                                    <br />
+                                                                    <input type="radio" name="gender" id="name"><span style="margin-left:3px">Female</span>
+                                                                    <br />
+                                                                    <label>Age:</label><br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">65-69</span>
+                                                                    <br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">70-74</span>
+                                                                    <br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">74-79</span>
+                                                                    <br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">80-84</span>
+                                                                    <br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">85-90</span>
+                                                                    <br />
+                                                                    <input type="radio" name="age" id="name"><span style="margin-left:3px">90+</span>
+                                                                    <br />
+
+                                                                    <label>Are you currently living by yourself:</label><br />
+                                                                    <input type="radio" name="live" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="live" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                            <input id="next_btn1" onclick="next_step1()" value="Next" class="btn btn-primary">
+                                                                            <div class="submitting"></div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </fieldset>
+
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <!--Step 2-->
+                                                                <fieldset style="display:none" id="second">
+                                                                    <h1 class="mb-0 bread">Fall History</h1>
+                                                                    <label>The number of falls you have experienced recently?:</label>
+                                                                    <input type="radio" name="falls" id="name"><span style="margin-left:3px">None in the last 2 months</span>
+                                                                    <br />
+                                                                    <input type="radio" name="falls" id="name"><span style="margin-left:3px">One or more times within the last 6 months</span>
+                                                                    <br />
+                                                                    <input type="radio" name="falls" id="name"><span style="margin-left:3px">One or more times within the last 3 months</span>
+                                                                    <br />
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                            <tr>
+                                                                                <td>
+                                                                            <input id="next_btn1" style="float:left" onclick="next_step2()" value="Next" class="btn btn-primary">
+                                                                            </td>
+                                                                                <td>
+                                                                                    <input id="pre_btn1" style="float:left" onclick="prev_step0()" value="Previous" class="btn btn-primary">
+                                                                            </td>
+                                                                                    </tr></table>
+                                                                        </div>
+                                                                        </div>
+                                                                </fieldset>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <!--Step 3-->
+                                                                <fieldset style="display:none" id="third">
+                                                                    <h1 class="mb-0 bread">Medical History</h1>
+
+                                                                    <label>Are you currently diagonised with osteporosis</label>
+                                                                    <br />
+                                                                    <input type="radio" name="osteo" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="osteo" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have any visual impairements</label>
+                                                                    <br />
+                                                                    <input type="radio" name="visual" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="visual" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Are you currently suffering from cardiovascular disease</label>
+                                                                    <br />
+                                                                    <input type="radio" name="heart" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="heart" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have type 2 diabetes</label>
+                                                                    <br />
+                                                                    <input type="radio" name="diabetes" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="diabetes" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input id="next_btn1" style="float:left" onclick="next_step3()" value="Next" class="btn btn-primary">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input id="pre_btn1" style="float:left" onclick="prev_step1()" value="Previous" class="btn btn-primary">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </fieldset>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <!--Step 4.1-->
+                                                                <fieldset style="display:none" id="fourth">
+
+                                                                    <h1 class="mb-0 bread">Home Safety Check</h1>
+                                                                    <h3 class="mb-4">Lighting</h3>
+                                                                    <label>Are all the areas in the home well lit?</label>
+                                                                    <br />
+                                                                    <input type="radio" name="lights" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="lights" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have movement sensor lights near stairs or hallway?</label>
+                                                                    <input type="radio" name="sensor" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="sensor" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Are all your light switches in your home working?</label>
+                                                                    <input type="radio" name="switches" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="switches" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input id="next_btn1" style="float:left" onclick="next_step4()" value="Next" class="btn btn-primary">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input id="pre_btn1" style="float:left" onclick="prev_step2()" value="Previous" class="btn btn-primary">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+
+
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <!--Step 4.2-->
+
+                                                                <fieldset style="display:none" id="fifth">
+
+                                                                    <h1 class="mb-0 bread">Home Safety Check</h1>
+                                                                    <h3 class="mb-4">Floor</h3>
+                                                                    <script>
+                                                                        function prev_step4() {
+
+                                                                            document.getElementById("sixth").style.dislay = "none";
+                                                                            document.getElementById("fifth").style.display = "block";
+
+
+                                                                        }
+                                                                    </script>
+                                                                    <label>Do you always clean up your floors right away when spoilage occurs?</label>
+                                                                    <input type="radio" name="floor" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="floor" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have any uneven floor/ground surface in the house?</label>
+                                                                    <input type="radio" name="surface" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="surface" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>
+                                                                        Are your mats or rugs fix to the floors or have non slip underlay?<br />
+                                                                        If you do not have mats or rugs please select yes
+                                                                    </label>
+
+                                                                    <input type="radio" name="rugs" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="rugs" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input id="next_btn1" style="float:left" onclick="next_step5()" value="Next" class="btn btn-primary">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input id="pre_btn1" style="float:left" onclick="prev_step3()" value="Previous" class="btn btn-primary">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <!--Step 4.3-->
+                                                                <fieldset style="display:none" id="sixth">
+
+                                                                    <h1 class="mb-0 bread">Home Safety Check</h1>
+                                                                    <h3 class="mb-4">Stairs/Steps</h3>
+                                                                    <label>Do you have hand rails for the steps/stairs?</label>
+                                                                    <br />
+                                                                    <input type="radio" name="rails" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="rails" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have sensor lights for these stairs/steps?</label>
+                                                                    <br />
+                                                                    <input type="radio" name="steps" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="steps" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input id="next_btn1" style="float:left" onclick="next_step6()" value="Next" class="btn btn-primary">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input id="pre_btn1" style="float:left" onclick="prev_step5()" value="Previous" class="btn btn-primary">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </fieldset>
+
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <!--Step 5-->
+                                                                <fieldset style="display:none" id="seventh">
+
+                                                                    <h1 class="mb-0 bread">Miscellaneous Obstacles</h1>
+
+                                                                    <label>Are your hallways/walkways free from clutter? </label>
+                                                                    <br />
+                                                                    <input type="radio" name="hall" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="hall" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>Do you have any loose cords laying around the house ?</label>
+                                                                    <br />
+                                                                    <input type="radio" name="cord" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="cord" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+
+                                                                    <label>
+                                                                        Are your pets wearing any collar bells?<br />
+                                                                        If you do not have pets please select
+                                                                    </label>
+                                                                    <br />
+                                                                    <input type="radio" name="pet" id="name"><span style="margin-left:3px">Yes</span>
+                                                                    <br />
+                                                                    <input type="radio" name="pet" id="name"><span style="margin-left:3px">No</span>
+                                                                    <br />
+                                                                    <div class="col-md-12">
+                                                                        <div class="form-group row">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <input id="submit" style="float:left" onclick="validation(event)" value="Submit" class="btn btn-primary">
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <input id="pre_btn1" style="float:left; padding-left:50px" onclick="prev_step6()" value="Previous" class="btn btn-primary">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+
+
+
+
+
+                                                                 
+
+                                                                </fieldset>
+
+
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </div>
+       
+</body>
+</html>
